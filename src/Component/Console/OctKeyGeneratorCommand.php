@@ -40,7 +40,7 @@ final class OctKeyGeneratorCommand extends AbstractGeneratorCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $size = (int) $input->getArgument('size');
+        $size = intval($input->getArgument('size'));
         $args = $this->getOptions($input);
 
         $jwk = JWKFactory::createOctKey($size, $args);

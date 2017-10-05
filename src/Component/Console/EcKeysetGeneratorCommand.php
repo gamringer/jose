@@ -42,7 +42,7 @@ final class EcKeysetGeneratorCommand extends AbstractGeneratorCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $quantity = (int) $input->getArgument('quantity');
+        $quantity = intval($input->getArgument('quantity'));
         $curve = $input->getArgument('curve');
 
         $keyset = JWKSet::createFromKeys([]);

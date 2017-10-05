@@ -42,8 +42,8 @@ final class RsaKeysetGeneratorCommand extends AbstractGeneratorCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $quantity = (int) $input->getArgument('quantity');
-        $size = (int) $input->getArgument('size');
+        $quantity = intval($input->getArgument('quantity'));
+        $size = intval($input->getArgument('size'));
 
         $keyset = JWKSet::createFromKeys([]);
         for ($i = 0; $i < $quantity; ++$i) {
